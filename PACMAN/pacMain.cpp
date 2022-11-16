@@ -8,6 +8,9 @@
 #include <sstream>
 #include <thread>
 
+#include "Item.h"
+#include "Entity.h"
+
 using namespace sf;
 using namespace std;
 
@@ -15,17 +18,15 @@ using namespace std;
 
 int main()
 {
-    enum class State {
-        CALCULATING, DISPLAYING
-    };
-    State state = State::CALCULATING;
+    Direction playerDirection = Direction::RIGHT;
+    Direction enemyDirection;
 
     Vector2f resolution;
     resolution.y = VideoMode::getDesktopMode().height;
     resolution.x = VideoMode::getDesktopMode().width;
     VideoMode vm(resolution.x, resolution.y);
     // Create and open a window for the game
-    RenderWindow window(vm, "-----", Style::Fullscreen);
+    RenderWindow window(vm, "PacMan", Style::Fullscreen);
     
     Text feed;
     Font font;
@@ -56,21 +57,23 @@ int main()
                 window.close();
             }
 
-            //read mouse moved event
-            if (event.type == sf::Event::MouseMoved)
+            if (event.type == sf::Event::KeyPressed)
             {
-               
-            }
-
-            if (event.type == sf::Event::MouseButtonPressed)
-            {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                if (event.KeyPressed.button == sf::Keyboard::Up)
                 {
-                    
+                    playerDirection = Direction::UP;              
                 }
-                if (event.mouseButton.button == sf::Mouse::Right)
+                if (event.KeyPressed.button == sf::Keyboard::Down)
                 {
-                    
+                    playerDirection = Direction::DOWN;
+                }
+                if (event.KeyPressed.button == sf::Keyboard::Left)
+                {
+                    playerDirection = Direction::LEFT;
+                }
+                if (event.KeyPressed.button == sf::Keyboard::Right)
+                {
+                    playerDirection = Direction::RIGHT;
                 }
             }
         }
@@ -80,16 +83,39 @@ int main()
             window.close();
         }
 
-        //update
-        //if CALCUATING
-        if (state == State::CALCULATING)
-        {
-            
-        }
-        
-        //set state to DISPLAYING
-        state = State::DISPLAYING;
+        //countdown (start direction NONE for countdown)
 
+        //if player collision with wall
+            //check playerDirection
+            //if it cant go that way
+                //set playerDirection NONE
+            //else
+                //player.Move()
+
+        //if enemy collision
+            //if collision with wall
+                //switch direction
+            //if collision with character
+                //lives--
+                //if lives == 0
+                    //game over
+                    //MAYBE PLAY AGAIN
+                //else
+                    //reset player location
+        
+        //if player collision with item location
+            //if dot
+                //add m_points to score
+            //if fruit
+                //add m_points to score
+            //delete item from vector
+            //if item vector size == 0
+                //rerun game
+                //increase ghost speed
+                //"level 2"
+
+
+        
         imaginaryPlane.loadText(feed);
         
         window.clear();
