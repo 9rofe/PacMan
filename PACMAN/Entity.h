@@ -12,13 +12,13 @@ enum class Direction {
 class Entity
 {
     public:
-        Entity(Vector2f location);
         virtual void Move(Direction direction) = 0;
         Vector2f GetLocation() const;
         void SetLocation(Vector2f location);
         virtual void SetSpeed(double speed) = 0;
         double GetSpeed() const;
     protected:
+        Entity(Vector2f location);
         double m_speed;
         Vector2f m_EntityLocation;
 };
