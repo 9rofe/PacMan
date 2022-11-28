@@ -29,7 +29,7 @@ class Player : public Entity
         Player(Vector2f location);
         void Move(Direction direction) override;
         int GetLives() const;
-        void setLives(int lives);
+        void SetLives(int lives);
     private:
         int m_playerLives;
 };
