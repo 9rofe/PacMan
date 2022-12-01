@@ -21,8 +21,8 @@ class Item
         void SetLocation(Vector2f location);
     protected:
         Item(Vector2f location);
-        Vector2f m_ItemLocation;
         int scoreboard;
+        RectangleShape m_ItemShape;
 
 };
 
@@ -32,7 +32,7 @@ class Dot : public Item
         Dot(Vector2f location);
     private:
         const int m_Points = 1;
-        const RectangleShape m_DotShape;
+        Vector2f m_DotSize{2.0, 2.0};
 };
 
 class Fruit : public Item
@@ -41,6 +41,7 @@ class Fruit : public Item
         Fruit(Vector2f location);
     private:
         const int m_Points = 5;
+        Vector2f m_FruitSize{ 5.0, 5.0 };
 
 };
 
