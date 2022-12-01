@@ -1,8 +1,18 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
+#include <sstream>
+#include <vector>
+#include <complex>
+#include <cmath>
+#include <sstream>
+#include <thread>
 
+using namespace sf;
+using namespace std;
 
 enum class Direction {
     UP, DOWN, LEFT, RIGHT, NONE

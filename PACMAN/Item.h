@@ -4,17 +4,25 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include <sstream>
+#include <vector>
+#include <complex>
+#include <cmath>
+#include <sstream>
+#include <thread>
+
+using namespace sf;
+using namespace std;
 
 class Item
 {
     public:
-        Item(Vector2f location);
         Vector2f GetLocation() const;
         void SetLocation(Vector2f location);
-        virtual void Eaten() = 0;
-
     protected:
+        Item(Vector2f location);
         Vector2f m_ItemLocation;
+        int scoreboard;
 
 };
 
@@ -22,19 +30,15 @@ class Dot : public Item
 {
     public:
         Dot(Vector2f location);
-        void Eaten() override;
-        // add 1 point, delete dot
     private:
         const int m_Points = 1;
-        const CircleShape m_DotShape;
+        const RectangleShape m_DotShape;
 };
 
 class Fruit : public Item
 {
     public:
         Fruit(Vector2f location);
-        void Eaten() override;
-        // add 5 points, delete fruit
     private:
         const int m_Points = 5;
 

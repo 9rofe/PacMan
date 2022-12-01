@@ -1,23 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <iostream>
-#include <sstream>
-#include <vector>
-#include <complex>
-#include <cmath>
-#include <sstream>
-#include <thread>
-
-#include "Item.h"
-#include "Entity.h"
-
-using namespace sf;
-using namespace std;
-
-
+#include "Engine.h"
 
 int main()
 {
+    /*
     Direction playerDirection = Direction::RIGHT;
     Direction enemyDirection;
 
@@ -30,8 +15,8 @@ int main()
     
     Text feed;
     Font font;
-    font.loadFromFile("fonts/TitilliumWeb-Regular.ttf");
-    if (!font.loadFromFile("fonts/TitilliumWeb-Regular.ttf"))
+    font.loadFromFile("fonts/CrackMan.TTF");
+    if (!font.loadFromFile("fonts/CrackMan.TTF"))
     {
         // error
     }
@@ -59,19 +44,19 @@ int main()
 
             if (event.type == sf::Event::KeyPressed)
             {
-                if (event.KeyPressed.button == sf::Keyboard::Up)
+                if (Keyboard::isKeyPressed(Keyboard::Up))
                 {
                     playerDirection = Direction::UP;              
                 }
-                if (event.KeyPressed.button == sf::Keyboard::Down)
+                if (Keyboard::isKeyPressed(Keyboard::Down))
                 {
                     playerDirection = Direction::DOWN;
                 }
-                if (event.KeyPressed.button == sf::Keyboard::Left)
+                if (Keyboard::isKeyPressed(Keyboard::Left))
                 {
                     playerDirection = Direction::LEFT;
                 }
-                if (event.KeyPressed.button == sf::Keyboard::Right)
+                if (Keyboard::isKeyPressed(Keyboard::Right))
                 {
                     playerDirection = Direction::RIGHT;
                 }
@@ -84,7 +69,10 @@ int main()
         }
 
         //countdown (start direction NONE for countdown)
-
+        
+        //check if no wall in selected direction
+            //player.move
+            
         //if player collision with wall
             //check playerDirection
             //if it cant go that way
@@ -122,6 +110,12 @@ int main()
         
 
         window.display();
-    }
+    }*/
+
+    //FULL CODE
+    Engine engine;
+
+    engine.run();
+
     return 0;
 }

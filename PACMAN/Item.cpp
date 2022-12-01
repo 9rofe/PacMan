@@ -1,19 +1,33 @@
 #include "Item.h"
 
+//item definitions
 Item::Item(Vector2f location)
 {
     m_ItemLocation = location;
 }
 
-
-Dot::Dot(Vector2f location) : Item(location)
+Vector2f Item::GetLocation() const
 {
-    m_DotShape.setRadius(2);
-    m_DotShape.setPointCount(30);
+    return m_ItemLocation;
 }
 
+void Item::SetLocation(Vector2f location)
+{
+    m_ItemLocation = location;
+}
+
+//dot definitions
+Dot::Dot(Vector2f location) : Item(location)
+{
+    //m_DotShape.
+}
+
+
+//fruit definitions
 Fruit::Fruit(Vector2f location) : Item(location)
 {
 
 }
+
+
 
