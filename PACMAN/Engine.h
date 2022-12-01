@@ -15,7 +15,7 @@ using namespace std;
 #include "Item.h"
 #include "Entity.h"
 
-class Engine()
+class Engine
 {
 public:
 	Engine();
@@ -29,7 +29,8 @@ private:
     //text overlay
     Text feed;
     Font font;
-
+    //Player m_Player(0.0,0.0);
+    //vector<RectangleShape> m_map;
 	void input();
 	void update();
 	void draw();
