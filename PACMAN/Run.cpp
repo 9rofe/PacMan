@@ -2,12 +2,12 @@
 
 #include <iostream>
 
-void Engine::run()
+void Engine::Run()
 {
     while (m_Window.isOpen())
     {
-        input();
-        update(/*input results*/);
-        draw();
+        Input();
+        Update(/*input results*/);
+        Draw();
     }
 }

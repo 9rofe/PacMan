@@ -1,6 +1,6 @@
 #include "Engine.h"
 
-void Engine::input()
+void Engine::Input()
 {
     Event event;
     while (m_Window.pollEvent(event))
@@ -8,7 +8,7 @@ void Engine::input()
         if (event.type == Event::Closed)
         {
             // Quit the game when the window is closed
-            window.close();
+            m_Window.close();
         }
 
         if (event.type == sf::Event::KeyPressed)

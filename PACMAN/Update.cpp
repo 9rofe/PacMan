@@ -1,6 +1,6 @@
 #include "Engine.h"
 
-void Engine::update(/*input results*/)
+void Engine::Update(/*input results*/)
 {
 	//collision
 }

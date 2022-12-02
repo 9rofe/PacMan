@@ -19,7 +19,7 @@ class Engine
 {
 public:
 	Engine();
-	void run();
+	void Run();
 private:
     Direction playerDirection;   
     RenderWindow m_Window;
@@ -30,8 +30,8 @@ private:
     Text feed;
     Font font;
     //Player m_Player(0.0,0.0);
-    //vector<RectangleShape> m_Map;
-	void input();
-	void update();
-	void draw();
+    vector<RectangleShape*> m_Map;
+	void Input();
+	void Update();
+	void Draw();
 };
