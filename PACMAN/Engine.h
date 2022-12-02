@@ -23,6 +23,7 @@ public:
 private:
     Direction playerDirection;   
     RenderWindow m_Window;
+    Vector2f resolution;
     View m_MainView;
     //scoreboard with score lives level and countdown 
     View m_HudView;
@@ -30,7 +31,7 @@ private:
     Text feed;
     Font font;
     //Player m_Player(0.0,0.0);
-    vector<RectangleShape*> m_Map;
+    vector<RectangleShape> m_Map;
 	void Input();
 	void Update();
 	void Draw();
