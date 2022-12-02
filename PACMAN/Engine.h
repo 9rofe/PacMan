@@ -30,7 +30,7 @@ private:
     Text feed;
     Font font;
     //Player m_Player(0.0,0.0);
-    //vector<RectangleShape> m_map;
+    //vector<RectangleShape> m_Map;
 	void input();
 	void update();
 	void draw();
