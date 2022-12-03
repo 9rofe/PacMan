@@ -16,28 +16,29 @@ void Engine::Input()
             if (Keyboard::isKeyPressed(Keyboard::Up))
             {
                 playerDirection = Direction::UP;
-                cout << "1" << endl;
+                cout << "UP" << endl;
             }
             if (Keyboard::isKeyPressed(Keyboard::Down))
             {
                 playerDirection = Direction::DOWN;
-                cout << "2" << endl;
+                cout << "DOWN" << endl;
             }
             if (Keyboard::isKeyPressed(Keyboard::Left))
             {
                 playerDirection = Direction::LEFT;
-                cout << "3" << endl;
+                cout << "LEFT" << endl;
             }
             if (Keyboard::isKeyPressed(Keyboard::Right))
             {
                 playerDirection = Direction::RIGHT;
-                cout << "4" << endl;
+                cout << "RIGHT" << endl;
             }
         }
     }
 
     if (Keyboard::isKeyPressed(Keyboard::Escape))
     {
+        cout << "game exited" << endl;
         m_Window.close();
     }
 }

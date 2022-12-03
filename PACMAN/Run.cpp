@@ -6,8 +6,9 @@ void Engine::Run()
 {
     while (m_Window.isOpen())
     {
+        cout << "running" << endl;
         Input();
-        Update(/*input results*/);
+        Update();
         Draw();
     }
 

@@ -5,11 +5,11 @@ Engine::Engine()
 
     // Get the screen resolution 
     // and create an SFML window and View
-    /*
+    
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
     m_Window.create(VideoMode(resolution.x, resolution.y), "PacMan", Style::Fullscreen);
-    */
+    
     // Initialize the full screen view
     m_MainView.setSize(resolution);
     m_HudView.reset(FloatRect(0, 0, resolution.x, resolution.y));
