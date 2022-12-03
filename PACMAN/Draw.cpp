@@ -46,6 +46,5 @@ void Engine::Draw()
 		positionTracker.x += wallSize.x;
 	}
 
-	m_Window.draw(feed);
 }
 

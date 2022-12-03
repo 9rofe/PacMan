@@ -29,6 +29,7 @@ private:
     View m_HudView;
     //text overlay
     Text feed;
+    bool loaded = false;
     Font font;
     Player *m_Player;
     vector<RectangleShape> m_Map;

@@ -9,5 +9,13 @@ void Engine::Run()
         Input();
         Update(/*input results*/);
         Draw();
+        if (loaded == false)
+        {
+            reset();
+            loaded == true;
+        }
     }
+    m_Window.clear();
+    m_Window.draw(feed);
+    m_Window.display();
 }
