@@ -1,28 +1,38 @@
 #include "Engine.h"
 
-vector<Rect<float>> Engine::DrawMap()
+//draw in loop
+void Engine::DrawWalls(vector<Rect<float>> map)
 {
+	for (int i = 0; i < map.size(); i++)
+	{
+		Vector2f mapSize = { map.at(i).width, map.at(i).height};
+		Vector2f mapPos = { map.at(i).left, map.at(i).top };
+		RectangleShape wall(mapSize);
+		wall.setPosition(mapPos);
+		wall.setFillColor(Color::White);
+		m_Window.draw(wall);
+	}
+}
 
-		vector<Rect<float>> m_Map;
-		srand(time(0));
-		Vector2f spaces = { resolution.x / 48, resolution.y / 27 };
-		for (int i = 1; i <= 4; i++)
-		{
-			int numWalls = rand() % 3 + 1;
-			Vector2f wallSize = { (resolution.x - (5 * spaces.x)) / 4, (resolution.y - ((numWalls + 1) * spaces.y)) / numWalls };
-			Vector2f positionTracker = { spaces.x * i, 0.0 };
-			for (int j = 0; j < numWalls; j++)
-			{
-				Vector2f wallPos = { positionTracker.x, positionTracker.y + spaces.x };
-				Rect<float> wall(wallPos, wallSize);
-				RectangleShape physWall(wallSize);
-				physWall.setPosition(wallPos);
-				physWall.setFillColor(Color::White);
-				m_Window.draw(physWall);
-				m_Map.push_back(wall);
-				positionTracker.y += wallSize.y;
-			}
-			positionTracker.x += wallSize.x;
-		}
-	return m_Map;
+//draw in loop
+void Engine::DrawItems(vector<Rect<float>> dots, vector<Rect<float>> fruit)
+{
+	for (int i = 0; i < dots.size(); i++)
+	{
+		Vector2f dotSize = { dots.at(i).width, dots.at(i).height };
+		Vector2f dotPos = { dots.at(i).left, dots.at(i).top };
+		RectangleShape dot(dotSize);
+		dot.setPosition(dotPos);
+		dot.setFillColor(Color::White);
+		m_Window.draw(dot);
+	}
+	for (int i = 0; i < fruit.size(); i++)
+	{
+		Vector2f fruitSize = { fruit.at(i).width, fruit.at(i).height };
+		Vector2f fruitPos = { fruit.at(i).left, fruit.at(i).top };
+		RectangleShape fruit(fruitSize);
+		fruit.setPosition(fruitPos);
+		fruit.setFillColor(Color::White);
+		m_Window.draw(fruit);
+	}
 }

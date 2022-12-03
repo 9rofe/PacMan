@@ -84,7 +84,7 @@ void Enemy::Move(Direction direction,Time dt)
     {
         m_EntityLocation.y -= m_speed * dt.asSeconds();
     }
-    if (m_EntityLocation.y == 1920.0f) //Max y res CHANGE LATER
+    if (m_EntityLocation.y == VideoMode::getDesktopMode().height) //Max y res CHANGE LATER
     {
         m_EntityLocation.y += m_speed * dt.asSeconds();
     }

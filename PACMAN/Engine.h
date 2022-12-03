@@ -6,7 +6,6 @@
 #include <vector>
 #include <complex>
 #include <cmath>
-#include <sstream>
 //#include <thread>
 
 using namespace sf;
@@ -36,5 +35,14 @@ private:
 	void Input();
 	void Update();
 	void Draw();
-    vector<Rect<float>> DrawMap();
+    vector<Rect<float>> m_fruitMap;
+    vector<Rect<float>> m_dotsMap;
+    vector<Rect<float>> m_wallsMap;
+    vector<Rect<float>> GenerateWalls();
+    vector<Rect<float>> GenerateDots();
+    vector<Rect<float>> GenerateFruit();
+    void DrawWalls(vector<Rect<float>> walls);
+    void DrawItems(vector<Rect<float>> dots, vector<Rect<float>> fruit);
+    
+
 };

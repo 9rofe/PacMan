@@ -7,4 +7,7 @@ void Engine::Update()
 	m_Player->Move(playerDirection, dt);
 	
 	clock.restart();
+
+	//check for eaten items
+	//update m_dotsMap and m_fruitMap
 }
