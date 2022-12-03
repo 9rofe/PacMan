@@ -24,7 +24,20 @@ void Engine::Draw()
     */
 
     //NO BOARDER (window will be boarder)
-    m_Window.draw(m_Map); //
+    //m_Window.draw(m_Map); //
+    // 
+    //Draws "Player"
+    RectangleShape d_player(Vector2f(40, 40));
+    
+    if (m_Player->GetLocation().y <= 0.0 || m_Player->GetLocation().y >= 1080.0)
+    {
+        m_Player->SetLocation(m_Player->GetLocation());
+        //playerDirection = Direction::NONE;
+    }
+    d_player.setPosition(m_Player->GetLocation());
+    
+    m_Window.draw(d_player);
+    //m_Window.draw();
 	m_Window.draw(feed);
 	m_Window.display();
 
