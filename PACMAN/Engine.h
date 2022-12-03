@@ -7,7 +7,7 @@
 #include <complex>
 #include <cmath>
 #include <sstream>
-#include <thread>
+//#include <thread>
 
 using namespace sf;
 using namespace std;
