@@ -27,21 +27,23 @@ void Engine::Draw()
 	vector<Rect<float>> m_Map;
 	srand(time(0));
 	Vector2f spaces = {resolution.x / 48, resolution.y / 27};
-	for (int i = 0; i < 4; i++)
+	for (int i = 1; i <= 4; i++)
 	{	
 		int numWalls = rand() % 3 + 1;
-		Vector2f wallSize = {(resolution.x - spaces.x)/ 4, (resolution.y - spaces.y)/ numWalls};
-		Vector2f positionTracker = {0.0, 0.0};
+		Vector2f wallSize = {(resolution.x - (5 * spaces.x))/ 4, (resolution.y - ((numWalls + 1) * spaces.y))/ numWalls};
+		Vector2f positionTracker = {spaces.x * i, 0.0};
 		for (int j = 0; j < numWalls; j++)
 		{
-			Vector2f wallPos = {positionTracker.x + spaces.x, positionTracker.y + spaces.x};
+			Vector2f wallPos = {positionTracker.x, positionTracker.y + spaces.x};
 			Rect<float> wall(wallPos, wallSize);
 			RectangleShape physWall(wallSize);
 			physWall.setPosition(wallPos);
+			physWall.setFillColor(Color::White);
 			m_Window.draw(physWall);
 			m_Map.push_back(wall);
-			positionTracker = {spaces.x + wallSize.x, spaces.y + wallSize.y};
+			positionTracker.y += wallSize.y;
 		}
+		positionTracker.x += wallSize.x;
 	}
 
 	m_Window.draw(feed);
