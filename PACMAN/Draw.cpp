@@ -6,6 +6,7 @@ void Engine::Draw()
     m_Window.clear();
 
     DrawWalls(m_wallsMap);
+    DrawItems(m_dotsMap, m_fruitMap);
 
     //Draws "Player"
     RectangleShape d_player(Vector2f(40, 40));

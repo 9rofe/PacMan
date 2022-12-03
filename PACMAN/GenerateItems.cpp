@@ -14,8 +14,15 @@ vector<Rect<float>> Engine::GenerateDots()
 			Rect<float> dot(dotPos, dotSize);
 			dotMap.push_back(dot);
 			dotPos.y += (resolution.y / 10);
+			/*
+			cout << "dot height" << dot.height << endl;
+			cout << "dot width" << dot.width << endl;
+			cout << "dot left" << dot.left << endl;
+			cout << "dot top" << dot.top << endl;
+			*/
 		}
 		dotPos.x += ((resolution.x / 48) + wallWidth);
+		dotPos.y = resolution.y / 10;
 	}
 	return dotMap;
 }
