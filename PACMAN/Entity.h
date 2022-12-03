@@ -22,7 +22,7 @@ enum class Direction {
 class Entity
 {
     public:
-        virtual void Move(Direction direction) = 0;
+        virtual void Move(Direction direction,Time dt) = 0;
         Vector2f GetLocation() const;
         void SetLocation(Vector2f location);
         virtual void SetSpeed(double speed) = 0;
@@ -37,9 +37,10 @@ class Player : public Entity
 {
     public:
         Player(Vector2f location);
-        void Move(Direction direction) override;
+        void Move(Direction direction,Time dt) override;
         int GetLives() const;
         void SetLives(int lives);
+        void SetSpeed(double speed) override;
     private:
         int m_playerLives;
 };
@@ -48,7 +49,7 @@ class Enemy : public Entity
 {
     public:
         Enemy(Vector2f location);
-        void Move(Direction direction) override;
+        void Move(Direction direction,Time dt) override;
 };
 
 #endif

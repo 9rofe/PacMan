@@ -115,7 +115,7 @@ int main()
     //FULL CODE
     Engine engine;
 
-    engine.run();
+    engine.Run();
 
     return 0;
 }

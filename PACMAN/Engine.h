@@ -18,10 +18,10 @@ using namespace std;
 class Engine
 {
 public:
-	Engine();
-	void Run();
+    Engine();
+    void Run();
 private:
-    Direction playerDirection;   
+    Direction playerDirection;
     RenderWindow m_Window;
     Vector2f resolution;
     View m_MainView;
@@ -30,7 +30,7 @@ private:
     //text overlay
     Text feed;
     Font font;
-    //Player m_Player(0.0,0.0);
+    Player *m_Player;
     vector<RectangleShape> m_Map;
 	void Input();
 	void Update();
