@@ -11,8 +11,8 @@ void Engine::Run()
         Draw();
         if (loaded == false)
         {
-            reset();
-            loaded == true;
+            m_Map = DrawMap();
+            loaded = true;
         }
     }
     m_Window.clear();

@@ -32,8 +32,9 @@ private:
     bool loaded = false;
     Font font;
     Player *m_Player;
-    vector<RectangleShape> m_Map;
+    vector<Rect<float>> m_Map; //Changed  from vector<RectangleShape> m_Map;
 	void Input();
 	void Update();
 	void Draw();
+    vector<Rect<float>> DrawMap();
 };

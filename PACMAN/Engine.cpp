@@ -18,7 +18,7 @@ Engine::Engine()
     font.loadFromFile("fonts/CrackMan.TTF");
     if (!font.loadFromFile("fonts/CrackMan.TTF"))
     {
-        // error
+        //error
     }
     FloatRect textRect = feed.getLocalBounds();
     feed.setFont(font);
@@ -30,4 +30,5 @@ Engine::Engine()
         textRect.width / 2.0f,
         textRect.top + textRect.height / 2.0f);
     feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
+    
 }
