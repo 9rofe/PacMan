@@ -21,7 +21,7 @@ void Player::Move(Direction direction, Time dt)
     }
     if (direction == Direction::RIGHT)
     {
-        m_EntityLocation.x -= m_speed * dt.asSeconds();
+        m_EntityLocation.x += m_speed * dt.asSeconds();
     }
     if (direction == Direction::DOWN)
     {
