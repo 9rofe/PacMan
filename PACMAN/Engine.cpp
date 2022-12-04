@@ -31,6 +31,8 @@ Engine::Engine()
     feed.setOutlineThickness(1.0);
     feed.setOrigin(textRect.left +textRect.width / 2.0f,textRect.top + textRect.height / 2.0f);
     feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
+
+    currentScore = 0;
     m_InputFile.open("PACMAN/scoreboard.txt");
     if (!m_InputFile)
     {
@@ -50,6 +52,7 @@ Engine::Engine()
     //generate the vectors of items (only generate each once)
     m_dotsMap = GenerateDots();
     m_fruitMap = GenerateFruit();
+    /*
     for (int i = 0; i < m_dotsMap.size(); i++)
     {
         cout << "top " << m_dotsMap.at(i)->top << endl;
@@ -57,6 +60,7 @@ Engine::Engine()
         cout << "height " << m_dotsMap.at(i)->height << endl;
         cout << "width " << m_dotsMap.at(i)->width << endl;
     }
+    */
     //draw once before loop
     DrawWalls(m_wallsMap);
     DrawItems(m_dotsMap, m_fruitMap);
