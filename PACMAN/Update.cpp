@@ -7,24 +7,6 @@ void Engine::Update()
 	m_Player->Move(playerDirection, dt);
 	for (int counter = 0; counter < 5; counter++)
 	{
-		/*if (m_Enemies.at(counter).GetLocation().y > 0.0f && m_Enemies.at(counter).getDirection() == Direction::DOWN) //&& m_Enemies.at(counter).getDirection() == Direction::UP)
-		{
-			m_Enemies.at(counter).Move(Direction::DOWN, dt);
-			cout << "MOVE UP" << endl;
-		}
-		if (m_Enemies.at(counter).GetLocation().y == 0)
-		{
-			m_Enemies.at(counter).SetDirection(Direction::UP);
-		}
-		if (m_Enemies.at(counter).GetLocation().y < VideoMode::getDesktopMode().height && m_Enemies.at(counter).getDirection() == Direction::UP)
-		{
-			m_Enemies.at(counter).Move(Direction::UP, dt);
-			cout << "MOVE DOWN" << endl;
-		}
-		if (m_Enemies.at(counter).GetLocation().y == 1920)
-		{
-			m_Enemies.at(counter).SetDirection(Direction::DOWN);
-		}*/
 		Direction curr_Direction = m_Enemies.at(counter).getDirection();
 		if (m_Enemies.at(counter).GetLocation().y < 1.0f)
 		{
