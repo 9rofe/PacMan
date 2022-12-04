@@ -39,7 +39,8 @@ Engine::Engine()
     else
     {
         string ss;
-        getline(m_InputFile, ss);
+        m_InputFile >> ss;
+        cout << "ss: " << ss << endl;
         m_HighScore = stoi(ss);
         cout << "Current High Score: " << m_HighScore << endl;
         m_InputFile.close();

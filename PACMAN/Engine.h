@@ -46,6 +46,6 @@ class Engine
         ifstream m_InputFile;
         ofstream m_OutputFile;
         int m_HighScore;
-        void CheckHighScore(int high);
+        void CheckHighScore(int newScore);
 
 };
