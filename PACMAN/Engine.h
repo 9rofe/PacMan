@@ -6,7 +6,8 @@
 #include <vector>
 #include <complex>
 #include <cmath>
-//#include <thread>
+#include <fstream>
+#include <string>
 
 using namespace sf;
 using namespace std;
@@ -23,12 +24,10 @@ class Engine
         Direction playerDirection;
         RenderWindow m_Window;
         Vector2f resolution;
-        View m_MainView;
-        //scoreboard with score lives level and countdown 
-        View m_HudView;
+        View m_Scoreboard;
+
         //text overlay
         Text feed;
-        bool loaded = false;
         Font font;
         Player *m_Player;
         vector<Enemy> m_Enemies;
@@ -44,6 +43,9 @@ class Engine
         vector<Rect<float>> GenerateFruit();
         void DrawWalls(vector<Rect<float>> walls);
         void DrawItems(vector<Rect<float>> dots, vector<Rect<float>> fruit);
-    
+        ifstream m_InputFile;
+        ofstream m_OutputFile;
+        int m_HighScore;
+        void CheckHighScore(int high);
 
 };
