@@ -85,27 +85,34 @@ Enemy::Enemy(Vector2f coord) : Entity(coord)
 
 void Enemy::Move(Direction direction,Time dt)
 {
-    if (m_EntityLocation.y >= 0.0f)
+    /*if (m_EntityLocation.y >= 0.0f)
     {
-        m_direction = Direction::DOWN;
+        m_direction = direction;
         m_EntityLocation.y -= m_speed * dt.asSeconds();
     }
     if (m_EntityLocation.y <= VideoMode::getDesktopMode().height) //Max y res CHANGE LATER
     {
-        m_direction = Direction::UP;
+        
         m_EntityLocation.y += m_speed * dt.asSeconds();
-    }
-    if (m_direction == Direction::DOWN)
+    }*/
+    if (direction == Direction::DOWN)
     {
+        
         m_EntityLocation.y -= m_speed * dt.asSeconds();
+        m_direction = direction;
     }
-    if (m_direction == Direction::UP)
+    if (direction == Direction::UP)
     {
         m_EntityLocation.y += m_speed * dt.asSeconds();
+        m_direction = direction;
     }
 
 }
 void Enemy::SetSpeed(double speed)
 {
     m_speed += speed;
+}
+Direction Enemy::getDirection() const
+{
+    return m_direction;
 }

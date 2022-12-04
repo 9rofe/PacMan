@@ -16,8 +16,8 @@ Engine::Engine()
     Vector2f coord = { resolution.x / 2.0f, resolution.y / 2.0f };
     m_Player = new Player(coord);
     playerDirection = Direction::LEFT;
-    font.loadFromFile("PACMAN/fonts/CrackMan.ttf");
-    if (!font.loadFromFile("PACMAN/fonts/CrackMan.ttf"))
+    font.loadFromFile("fonts/CrackMan.ttf");
+    if (!font.loadFromFile("fonts/CrackMan.ttf"))
     {/*error*/}
     //creates enemies
     for (int counter = 0; counter < 5; counter++)
