@@ -15,13 +15,7 @@ void Engine::Draw()
     dd_player.setTexture(text);
     dd_player.setScale(2.0, 2.0);
     
-    /*if (m_Player->GetLocation().y <= 0.0 || m_Player->GetLocation().y >= 1080.0)
-    {
-        m_Player->SetLocation(m_Player->GetLocation());
-        //playerDirection = Direction::NONE;
-    }*/
     dd_player.setPosition(m_Player->GetLocation());
-
     m_Window.draw(dd_player);
     for (int counter = 0; counter < 5; counter++)
     {

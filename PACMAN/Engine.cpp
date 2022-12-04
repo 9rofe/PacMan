@@ -2,7 +2,6 @@
 
 Engine::Engine()
 {
-
     // Get the screen resolution 
     // and create an SFML window and View
     resolution.x = VideoMode::getDesktopMode().width;
@@ -15,6 +14,7 @@ Engine::Engine()
 
     Vector2f coord = { resolution.x / 2.0f, resolution.y / 1.1f };
     m_Player = new Player(coord);
+    m_Player->SetSpeed(300.0);
     playerDirection = Direction::LEFT;
     font.loadFromFile("PACMAN/fonts/CrackMan.TTF");
     if (!font.loadFromFile("PACMAN/fonts/CrackMan.TTF"))
@@ -32,11 +32,10 @@ Engine::Engine()
     feed.setCharacterSize(20);
     feed.setFillColor(Color::White);
     feed.setOutlineColor(Color::Blue);
-    feed.setOutlineThickness(2.0);
-    feed.setOrigin(textRect.left +
-        textRect.width / 2.0f,
-        textRect.top + textRect.height / 2.0f);
+    feed.setOutlineThickness(1.0);
+    feed.setOrigin(textRect.left +textRect.width / 2.0f,textRect.top + textRect.height / 2.0f);
     feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
+    feed.setString("HIGH SCORE: \nLIVES: " + m_Player->GetLives());
     
     //generate walls
     m_wallsMap = GenerateWalls();
