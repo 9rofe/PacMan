@@ -5,7 +5,6 @@ Engine::Engine()
 
     // Get the screen resolution 
     // and create an SFML window and View
-    
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
     m_Window.create(VideoMode(resolution.x, resolution.y), "PacMan", Style::Fullscreen);
@@ -19,8 +18,11 @@ Engine::Engine()
     playerDirection = Direction::LEFT;
     font.loadFromFile("PACMAN/fonts/CrackMan.ttf");
     if (!font.loadFromFile("PACMAN/fonts/CrackMan.ttf"))
+    {/*error*/}
+    //creates enemies
+    for (int counter = 0; counter < 5; counter++)
     {
-        //error
+        m_Enemies.push_back(Enemy(Vector2f(40.0f * counter, 40.0f * counter)));
     }
     FloatRect textRect = feed.getLocalBounds();
     feed.setFont(font);
@@ -33,7 +35,7 @@ Engine::Engine()
         textRect.top + textRect.height / 2.0f);
     feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
     
-    //generate walls
+    /*generate walls
     m_wallsMap = GenerateWalls();
     //generate the vectors of items (only generate each once)
     m_dotsMap = GenerateDots();
@@ -41,7 +43,7 @@ Engine::Engine()
 
     //draw once before loop
     DrawWalls(m_wallsMap);
-    DrawItems(m_dotsMap, m_fruitMap);
+    DrawItems(m_dotsMap, m_fruitMap);*/
 
 
 }

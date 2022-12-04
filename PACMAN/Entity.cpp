@@ -3,7 +3,7 @@
 Entity::Entity(Vector2f coord)
 {
     m_EntityLocation = coord;
-    m_speed = 100;
+    m_speed = 210;
 
 }
 double Entity::GetSpeed() const
@@ -49,9 +49,13 @@ void Player::Move(Direction direction, Time dt)
         m_speed = 210;
         m_EntityLocation.y -= m_speed * dt.asSeconds();
     }
+    else if(m_EntityLocation.y == 0.0)
+    {
+        --m_EntityLocation.y;
+    }
     else
     {
-        
+        --m_EntityLocation.x;
     }
 
 }
@@ -88,4 +92,8 @@ void Enemy::Move(Direction direction,Time dt)
     {
         m_EntityLocation.y += m_speed * dt.asSeconds();
     }
+}
+void Enemy::SetSpeed(double speed)
+{
+    m_speed += speed;
 }
