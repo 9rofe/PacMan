@@ -10,7 +10,10 @@ void Engine::Run()
         Input();
         Update();
         Draw();
+        //if game over
+        //CheckHighScore(currentScore);
+        //currentScore = 0;
     }
-
+    
     m_Window.display();
 }

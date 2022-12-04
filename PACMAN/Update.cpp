@@ -83,5 +83,4 @@ void Engine::Update()
 			++fruitIter;
 		}
 	}
-	
 }
