@@ -24,18 +24,14 @@ void Engine::Update()
 
 	for (int counter = 0; counter < 5; counter++)
 	{
-		Direction curr_Direction = m_Enemies.at(counter).getDirection();
 		if (m_Enemies.at(counter).GetLocation().y < 1.0f)
 		{
-			curr_Direction = Direction::UP;
-			m_Enemies.at(counter).SetDirection(curr_Direction);
-			//float cur_location = m_Enemies.at(counter).GetLocation().y + 1.0f;
+			m_Enemies.at(counter).SetDirection(Direction::UP);
 			m_Enemies.at(counter).SetLocation(Vector2f(m_Enemies.at(counter).GetLocation().x, m_Enemies.at(counter).GetLocation().y + 1.0f));
 		}
 		else if (m_Enemies.at(counter).GetLocation().y >= 1000.0f)
 		{
-			curr_Direction = Direction::DOWN;
-			m_Enemies.at(counter).SetDirection(curr_Direction);
+			m_Enemies.at(counter).SetDirection(Direction::DOWN);
 			m_Enemies.at(counter).SetLocation(Vector2f(m_Enemies.at(counter).GetLocation().x, m_Enemies.at(counter).GetLocation().y - 1.0f));
 		}
 		m_Enemies.at(counter).Move(m_Enemies.at(counter).getDirection(), dt);

@@ -14,7 +14,7 @@ Engine::Engine()
 
     Vector2f coord = { resolution.x / 2.0f, resolution.y / 1.1f };
     m_Player = new Player(coord);
-    m_Player->SetSpeed(300.0);
+    //m_Player->SetSpeed(300.0);
     playerDirection = Direction::LEFT;
     font.loadFromFile("PACMAN/fonts/CrackMan.TTF");
     if (!font.loadFromFile("PACMAN/fonts/CrackMan.TTF"))
