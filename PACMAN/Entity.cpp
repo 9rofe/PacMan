@@ -31,33 +31,24 @@ void Player::Move(Direction direction, Time dt)
 {
     if (direction == Direction::LEFT)
     {
-        m_speed = 300;
+        m_speed = 510;
         m_EntityLocation.x -= m_speed * dt.asSeconds();
     }
     else if (direction == Direction::RIGHT)
     {
-        m_speed = 300;
+        m_speed = 510;
         m_EntityLocation.x += m_speed * dt.asSeconds();
     }
     else if (direction == Direction::DOWN)
     {
-        m_speed = 300;
+        m_speed = 510;
         m_EntityLocation.y += m_speed * dt.asSeconds();
     }
     else if (direction == Direction::UP)
     {
-        m_speed = 300;;
+        m_speed = 510;;
         m_EntityLocation.y -= m_speed * dt.asSeconds();
     }
-    /*else if (m_EntityLocation.y == 0.0)
-    {
-        --m_EntityLocation.y;
-    }
-    else
-    {
-        --m_EntityLocation.x;
-    }*/
-
 }
 
 void Player::SetSpeed(double speed)

@@ -23,7 +23,7 @@ Engine::Engine()
     float spacer = (resolution.x - (5 * (resolution.x / 16))) / 4;
     for (int counter = 0; counter < 5; counter++)
     {
-        Vector2f enemyPos = { (((resolution.x / 16) / 3) - (resolution.x / 192)) + ((resolution.x / 16 + spacer) * counter) , (resolution.y / 2) - (resolution.y / 108)};
+        Vector2f enemyPos = { (((resolution.x / 16) / 3) - (resolution.x / 192)) + ((resolution.x / 16 + spacer) * counter), (resolution.y / 2) - (resolution.y / 108)};
         m_Enemies.push_back(Enemy(enemyPos));
         m_Enemies.at(counter).SetSpeed(300.0);
     }
@@ -35,7 +35,7 @@ Engine::Engine()
     feed.setOutlineThickness(1.0);
     feed.setOrigin(textRect.left +textRect.width / 2.0f,textRect.top + textRect.height / 2.0f);
     feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
-    feed.setString("HIGH SCORE: \nLIVES: " + m_Player->GetLives());
+    feed.setString("HiGH SCORE: \nLIVES: " + m_Player->GetLives());
     
     //generate walls
     m_wallsMap = GenerateWalls();
