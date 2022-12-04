@@ -19,20 +19,14 @@ void Item::SetLocation(Vector2f location)
 //dot definitions
 Dot::Dot(Vector2f location) : Item(location)
 {
-    m_ItemShape.setSize(m_DotSize);
-    m_ItemShape.setFillColor(Color::White);
-
+    m_Points = 1;
 }
 
 
 //fruit definitions
 Fruit::Fruit(Vector2f location) : Item(location)
 {
-    m_ItemShape.setSize(m_FruitSize);
-    m_ItemShape.setFillColor(Color::Red);
-    m_ItemShape.setOutlineColor(Color::Blue);
+    m_Points = 4;
 
 }
-
-
 

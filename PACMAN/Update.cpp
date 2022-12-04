@@ -44,6 +44,14 @@ void Engine::Update()
 
 	for (unsigned int counter = 0; counter < m_dotsMap.size(); counter++)
 	{
+		Rect<float> playerRect(m_Player->GetLocation(), {80.0, 80.0});
+		bool collides = m_dotsMap.at(counter).intersects(playerRect);
+		if (collides)
+		{
+			cout << "COLLISION!" << endl;
+			//delete dot
+			//add dot->getPoints()
+		}
 		/*if (m_dotsMap.at(counter).intersects(Rect(40.40, 40.0)))
 		{
 			m_dotsMap.at(counter)

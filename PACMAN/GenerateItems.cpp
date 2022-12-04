@@ -1,7 +1,7 @@
 #include "Engine.h"
 
 //generate once each round
-vector<Rect<float>> Engine::GenerateDots()
+vector<Rect<float>*> Engine::GenerateDots()
 {
 	vector<Rect<float>> dotMap;
 	Vector2f dotSize = { resolution.x / 96, resolution.y / 54 };

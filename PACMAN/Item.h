@@ -19,6 +19,7 @@ class Item
     public:
         Vector2f GetLocation() const;
         void SetLocation(Vector2f location);
+        virtual int getPoints() = 0;
     protected:
         Item(Vector2f location);
         int scoreboard;
@@ -29,23 +30,25 @@ class Item
 class Dot : public Item
 {
     public:
+        int getPoints() override
+        {
+            return m_Points;
+        };
         Dot(Vector2f location);
     private:
-        const int m_Points = 1;
-        Vector2f m_DotSize{2.0, 2.0};
+        int m_Points
 };
 
 class Fruit : public Item
 {
     public:
+        int getPoints() override
+        {
+            return m_Points;
+        };
         Fruit(Vector2f location);
     private:
-        const int m_Points = 5;
-        Vector2f m_FruitSize{ 5.0, 5.0 };
-
+        int m_Points;
 };
-
-
-
 
 #endif
