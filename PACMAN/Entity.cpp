@@ -80,18 +80,30 @@ Enemy::Enemy(Vector2f coord) : Entity(coord)
 {
     m_EntityLocation = coord;
     m_speed = 200;
+    m_direction = Direction::DOWN;
 }
 
 void Enemy::Move(Direction direction,Time dt)
 {
-    if (m_EntityLocation.y == 0.0f)
+    if (m_EntityLocation.y >= 0.0f)
+    {
+        m_direction = Direction::DOWN;
+        m_EntityLocation.y -= m_speed * dt.asSeconds();
+    }
+    if (m_EntityLocation.y <= VideoMode::getDesktopMode().height) //Max y res CHANGE LATER
+    {
+        m_direction = Direction::UP;
+        m_EntityLocation.y += m_speed * dt.asSeconds();
+    }
+    if (m_direction == Direction::DOWN)
     {
         m_EntityLocation.y -= m_speed * dt.asSeconds();
     }
-    if (m_EntityLocation.y == VideoMode::getDesktopMode().height) //Max y res CHANGE LATER
+    if (m_direction == Direction::UP)
     {
         m_EntityLocation.y += m_speed * dt.asSeconds();
     }
+
 }
 void Enemy::SetSpeed(double speed)
 {
