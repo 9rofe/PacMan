@@ -17,7 +17,7 @@ void Engine::Update()
 	{
 		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x + 1.0f, m_Player->GetLocation().y));
 	}
-	else if (m_Player->GetLocation().x >= 1900.0f)
+	else if (m_Player->GetLocation().x >= 1840.0f)
 	{
 		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x - 1.0f, m_Player->GetLocation().y));
 	}
@@ -41,4 +41,12 @@ void Engine::Update()
 
 	//check for eaten items
 	//update m_dotsMap and m_fruitMap
+
+	for (unsigned int counter = 0; counter < m_dotsMap.size(); counter++)
+	{
+		/*if (m_dotsMap.at(counter).intersects(Rect(40.40, 40.0)))
+		{
+			m_dotsMap.at(counter)
+		}*/
+	}
 }
