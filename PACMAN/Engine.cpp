@@ -13,7 +13,7 @@ Engine::Engine()
     m_MainView.setSize(resolution);
     m_HudView.reset(FloatRect(0, 0, resolution.x, resolution.y));
 
-    Vector2f coord = { resolution.x / 2.0f, resolution.y / 2.0f };
+    Vector2f coord = { resolution.x / 2.0f, resolution.y / 1.1f };
     m_Player = new Player(coord);
     playerDirection = Direction::LEFT;
     font.loadFromFile("PACMAN/fonts/CrackMan.TTF");

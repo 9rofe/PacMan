@@ -95,16 +95,16 @@ void Enemy::Move(Direction direction,Time dt)
         
         m_EntityLocation.y += m_speed * dt.asSeconds();
     }*/
-    if (direction == Direction::DOWN)
+    if (m_direction == Direction::DOWN)
     {
         
         m_EntityLocation.y -= m_speed * dt.asSeconds();
-        m_direction = direction;
+        //m_direction = direction;
     }
-    if (direction == Direction::UP)
+    else if (m_direction == Direction::UP)
     {
         m_EntityLocation.y += m_speed * dt.asSeconds();
-        m_direction = direction;
+        //m_direction = direction;
     }
 
 }
@@ -115,4 +115,8 @@ void Enemy::SetSpeed(double speed)
 Direction Enemy::getDirection() const
 {
     return m_direction;
+}
+void Enemy::SetDirection(Direction direction)
+{
+    m_direction = direction;
 }

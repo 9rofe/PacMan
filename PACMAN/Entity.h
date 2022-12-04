@@ -52,6 +52,7 @@ class Enemy : public Entity
         void Move(Direction direction,Time dt) override;
         void SetSpeed(double speed) override;
         Direction getDirection() const;
+        void SetDirection(Direction direction);
     private:
         Direction m_direction;
 };
