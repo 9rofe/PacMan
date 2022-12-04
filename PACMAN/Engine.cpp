@@ -20,9 +20,11 @@ Engine::Engine()
     if (!font.loadFromFile("PACMAN/fonts/CrackMan.TTF"))
     {/*error*/}
     //creates enemies
+    float spacer = (resolution.x - (5 * (resolution.x / 16))) / 4;
     for (int counter = 0; counter < 5; counter++)
     {
-        m_Enemies.push_back(Enemy(Vector2f(400.0f * counter, 40.0f * counter)));
+        Vector2f enemyPos = { (((resolution.x / 16) / 3) - (resolution.x / 192)) + ((resolution.x / 16 + spacer) * counter) , (resolution.y / 2) - (resolution.y / 108)};
+        m_Enemies.push_back(Enemy(enemyPos));
         m_Enemies.at(counter).SetSpeed(300.0);
     }
     FloatRect textRect = feed.getLocalBounds();

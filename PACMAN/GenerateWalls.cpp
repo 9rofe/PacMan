@@ -5,7 +5,7 @@ vector<Rect<float>> Engine::GenerateWalls()
 {
 	vector<Rect<float>> map;
 	srand(time(0));
-	Vector2f spaces = { resolution.x / 48, resolution.y / 27 };
+	Vector2f spaces = { resolution.x / 16, resolution.y / 9 };
 	Vector2f positionTracker = { spaces.x , 0.0 };
 	Vector2f wallSize;
 	for (int i = 1; i <= 4; i++)

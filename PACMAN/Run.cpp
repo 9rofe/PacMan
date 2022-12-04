@@ -12,6 +12,5 @@ void Engine::Run()
         Draw();
     }
 
-    m_Window.draw(feed);
     m_Window.display();
 }

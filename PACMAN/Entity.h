@@ -50,7 +50,7 @@ class Enemy : public Entity
     public:
         Enemy(Vector2f location);
         void Move(Direction direction,Time dt) override;
-        void SetSpeed(double) override;
+        void SetSpeed(double speed) override;
         Direction getDirection() const;
     private:
         Direction m_direction;

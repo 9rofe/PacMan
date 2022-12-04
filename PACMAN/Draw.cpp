@@ -13,6 +13,7 @@ void Engine::Draw()
     Texture text;
     text.loadFromFile("PACMAN/Textures/BluePacmanGhost.png");
     dd_player.setTexture(text);
+    dd_player.setScale(2.0, 2.0);
     
     /*if (m_Player->GetLocation().y <= 0.0 || m_Player->GetLocation().y >= 1080.0)
     {
@@ -26,6 +27,7 @@ void Engine::Draw()
     {
         Sprite new_Enemy;
         new_Enemy.setTexture(text);
+        new_Enemy.setScale(2.0, 2.0);
         new_Enemy.setPosition(m_Enemies.at(counter).GetLocation());
         m_Window.draw(new_Enemy);
     }
