@@ -24,6 +24,7 @@ vector<Rect<float>> Engine::GenerateDots()
 		dotPos.x += ((resolution.x / 48) + wallWidth);
 		dotPos.y = resolution.y / 10;
 	}
+	cout << "dots generated" << endl;
 	return dotMap;
 }
 
@@ -40,5 +41,6 @@ vector<Rect<float>> Engine::GenerateFruit()
 		fruitMap.push_back(fruit);
 		fruitPos.x += ((resolution.x / 48) + wallWidth);
 	}
+	cout << "fruits generated" << endl;
 	return fruitMap;
 }

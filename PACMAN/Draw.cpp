@@ -5,13 +5,13 @@ void Engine::Draw()
 {   
     m_Window.clear();
 
-    //DrawWalls(m_wallsMap);
-    //DrawItems(m_dotsMap, m_fruitMap);
+    DrawWalls(m_wallsMap);
+    DrawItems(m_dotsMap, m_fruitMap);
 
     //Draws "Player"
     Sprite dd_player;
     Texture text;
-    text.loadFromFile("Textures/BluePacmanGhost.png");
+    text.loadFromFile("PACMAN/Textures/BluePacmanGhost.png");
     dd_player.setTexture(text);
     
     /*if (m_Player->GetLocation().y <= 0.0 || m_Player->GetLocation().y >= 1080.0)

@@ -16,8 +16,8 @@ Engine::Engine()
     Vector2f coord = { resolution.x / 2.0f, resolution.y / 2.0f };
     m_Player = new Player(coord);
     playerDirection = Direction::LEFT;
-    font.loadFromFile("fonts/CrackMan.ttf");
-    if (!font.loadFromFile("fonts/CrackMan.ttf"))
+    font.loadFromFile("PACMAN/fonts/CrackMan.TTF");
+    if (!font.loadFromFile("PACMAN/fonts/CrackMan.TTF"))
     {/*error*/}
     //creates enemies
     for (int counter = 0; counter < 5; counter++)
@@ -36,7 +36,7 @@ Engine::Engine()
         textRect.top + textRect.height / 2.0f);
     feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
     
-    /*generate walls
+    //generate walls
     m_wallsMap = GenerateWalls();
     //generate the vectors of items (only generate each once)
     m_dotsMap = GenerateDots();
@@ -44,7 +44,7 @@ Engine::Engine()
 
     //draw once before loop
     DrawWalls(m_wallsMap);
-    DrawItems(m_dotsMap, m_fruitMap);*/
+    DrawItems(m_dotsMap, m_fruitMap);
 
 
 }

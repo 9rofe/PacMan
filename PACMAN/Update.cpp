@@ -10,12 +10,12 @@ void Engine::Update()
 		if (m_Enemies.at(counter).GetLocation().y > 0.0f && m_Enemies.at(counter).GetLocation().y < VideoMode::getDesktopMode().height) //&& m_Enemies.at(counter).getDirection() == Direction::UP)
 		{
 			m_Enemies.at(counter).Move(Direction::DOWN, dt);
-			cout << "MOVE UP" << endl;
+			//cout << "MOVE UP" << endl;
 		}
 		else if (m_Enemies.at(counter).GetLocation().y <= 0.0f && m_Enemies.at(counter).GetLocation().y > VideoMode::getDesktopMode().height)
 		{
 			m_Enemies.at(counter).Move(Direction::UP, dt);
-			cout << "MOVE DOWN" << endl;
+			//cout << "MOVE DOWN" << endl;
 		}
 		
 	}

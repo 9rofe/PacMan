@@ -12,6 +12,7 @@ void Engine::DrawWalls(vector<Rect<float>> map)
 		wall.setFillColor(Color::White);
 		m_Window.draw(wall);
 	}
+	//cout << "walls drawn" << endl;
 }
 
 //draw in loop
@@ -26,6 +27,7 @@ void Engine::DrawItems(vector<Rect<float>> dots, vector<Rect<float>> fruit)
 		dot.setFillColor(Color::White);
 		m_Window.draw(dot);
 	}
+	//cout << "dots drawn" << endl;
 	for (int i = 0; i < fruit.size(); i++)
 	{
 		Vector2f fruitSize = { fruit.at(i).width, fruit.at(i).height };
@@ -35,4 +37,5 @@ void Engine::DrawItems(vector<Rect<float>> dots, vector<Rect<float>> fruit)
 		fruit.setFillColor(Color::White);
 		m_Window.draw(fruit);
 	}
+	//cout << "fruit drawn" << endl;
 }
