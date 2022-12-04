@@ -22,7 +22,8 @@ Engine::Engine()
     //creates enemies
     for (int counter = 0; counter < 5; counter++)
     {
-        m_Enemies.push_back(Enemy(Vector2f(40.0f * counter, 40.0f * counter)));
+        m_Enemies.push_back(Enemy(Vector2f(400.0f * counter, 40.0f * counter)));
+        m_Enemies.at(counter).SetSpeed(300.0);
     }
     FloatRect textRect = feed.getLocalBounds();
     feed.setFont(font);
