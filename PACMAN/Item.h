@@ -16,39 +16,38 @@ using namespace std;
 
 class Item
 {
-    public:
-        Vector2f GetLocation() const;
-        void SetLocation(Vector2f location);
-        virtual int getPoints() = 0;
-    protected:
-        Item(Vector2f location);
-        int scoreboard;
-        RectangleShape m_ItemShape;
-
+public:
+    Vector2f GetLocation() const;
+    void SetLocation(Vector2f location);
+    virtual int getPoints() = 0;
+protected:
+    Item(Vector2f location);
+    int scoreboard;
+    RectangleShape m_ItemShape;
 };
 
 class Dot : public Item
 {
-    public:
-        int getPoints() override
-        {
-            return m_Points;
-        };
-        Dot(Vector2f location);
-    private:
-        int m_Points
+public:
+    int getPoints() override
+    {
+        return m_Points;
+    }
+    Dot(Vector2f location);
+private:
+    int m_Points;
 };
 
 class Fruit : public Item
 {
-    public:
-        int getPoints() override
-        {
-            return m_Points;
-        };
-        Fruit(Vector2f location);
-    private:
-        int m_Points;
+public:
+    int getPoints() override
+    {
+        return m_Points;
+    }
+    Fruit(Vector2f location);
+private:
+    int m_Points;
 };
 
 #endif
