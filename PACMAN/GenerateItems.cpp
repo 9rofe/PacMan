@@ -16,12 +16,6 @@ list<Rect<float>> Engine::GenerateDots()
 			Rect<float> dot_ptr = dot;
 			dotMap.push_back(dot_ptr);
 			dotPos.y += (resolution.y / 10);
-			/*
-			cout << "dot height" << dot.height << endl;
-			cout << "dot width" << dot.width << endl;
-			cout << "dot left" << dot.left << endl;
-			cout << "dot top" << dot.top << endl;
-			*/
 		}
 		dotPos.x += ((resolution.x / 16) + wallWidth);
 		dotPos.y = resolution.y / 10;

@@ -19,35 +19,32 @@ class Item
 public:
     Vector2f GetLocation() const;
     void SetLocation(Vector2f location);
+    virtual Vector2f GetSize() const = 0;
+    virtual void SetSize(Vector2f location) = 0;
     virtual int getPoints() = 0;
 protected:
     Item(Vector2f location);
-    int scoreboard;
-    RectangleShape m_ItemShape;
+    Vector2f itemLocation;
 };
 
 class Dot : public Item
 {
 public:
-    int getPoints() override
-    {
-        return m_Points;
-    }
-    Dot(Vector2f location);
+    Dot(Vector2f location, Vector2f size);
+    int getPoints() override;
 private:
     int m_Points;
+    Rect<float> dot;
 };
 
 class Fruit : public Item
 {
 public:
-    int getPoints() override
-    {
-        return m_Points;
-    }
-    Fruit(Vector2f location);
+    Fruit(Vector2f location, Vector2f size);
+    int getPoints() override;
 private:
     int m_Points;
+    Rect<float> fruit;
 };
 
 #endif

@@ -6,7 +6,7 @@ bool Engine::ItemCollision(Rect<float> playerRect)
 	list<Rect<float>>::iterator dotsIter = m_dotsMap.begin();
 	while (dotsIter != m_dotsMap.end()) {
 		if (dotsIter->intersects(playerRect)) {
-			cout << "DOT COLLISION!" << endl;
+			//cout << "DOT COLLISION!" << endl;
 			dotsIter = m_dotsMap.erase(dotsIter);
 			currentScore += 1;
 		}
@@ -16,7 +16,7 @@ bool Engine::ItemCollision(Rect<float> playerRect)
 	}
 	while (fruitIter != m_fruitMap.end()) {
 		if (fruitIter->intersects(playerRect)) {
-			cout << "DOT COLLISION!" << endl;
+			//cout << "FRUIT COLLISION!" << endl;
 			fruitIter = m_fruitMap.erase(fruitIter);
 			currentScore += 4;
 		}
