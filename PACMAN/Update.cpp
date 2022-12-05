@@ -134,6 +134,7 @@ void Engine::Update()
 	}
 	if (m_dotsMap.size() == 0 && m_fruitMap.size() == 0)
 	{
+		//update enemy speed to be faster
 		//reset
 	}
 }
