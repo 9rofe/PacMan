@@ -12,6 +12,8 @@ void Engine::DrawWalls(vector<Rect<float>> map)
 		RectangleShape wall(mapSize);
 		wall.setPosition(mapPos);
 		wall.setFillColor(Color::Red);
+		wall.setOutlineThickness(4.0);
+		wall.setOutlineColor(Color::White);
 		m_Window.draw(wall);
 	}
 	//cout << "walls drawn" << endl;
