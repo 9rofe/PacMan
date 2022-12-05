@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include <ctime>
 
 void Engine::Update()
 {
@@ -26,24 +27,34 @@ void Engine::Update()
 	Rect<float> playerRect(m_Player->GetLocation(), { 60.0, 60.0 });
 	WallCollision();
 	//ItemCollision(playerRect);
+	
 	//timer and enemy collision check
 	if (EnemyCollision(playerRect) == true || ItemCollision(playerRect) == true) // not working on ItemCollision() reset.
 	{
 		playerDirection = Direction::NONE;
 		Clock e_Clock;
 		Time e_Dt = e_Clock.restart();
-		//countdown = 2
+		m_Window.draw(countdown);
 		while (e_Dt.asSeconds() <= 2.0f){
 			e_Dt = e_Clock.getElapsedTime();
 			this->Draw();
 			clock.restart();
-			//countdown draw
-			//countdown --
-			//cout << "TIMER ENEMY COLISION: " << e_Dt.asSeconds() << endl;
+			/*
+			if (e_Dt.asSeconds() >= 0.0 && e_Dt.asSeconds() < 1.0)
+			{
+				m_Window.draw(countdown);
+			}
+			if (e_Dt.asSeconds() >= 1.0)
+			{
+				countdown.setString("1");
+				m_Window.draw(countdown);
+			}
+			*/
 		}
 		e_Clock.restart();
 		playerDirection = Direction::RIGHT;
 	}
+	
 	m_Scoreboard = "Score: " + to_string(currentScore) + '\n' + "High Score: " + to_string(m_HighScore) + '\n' 
 		+ "Lives: " + to_string(m_Player->GetLives());
 	feed.setString(m_Scoreboard);

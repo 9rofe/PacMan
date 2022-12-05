@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp> 
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <sstream>
@@ -15,7 +15,6 @@ using namespace std;
 
 #include "Item.h"
 #include "Entity.h"
-#include <list>
 
 class Engine
 {
@@ -32,13 +31,13 @@ class Engine
         int m_Lives;
         bool levelUp = false;
         bool dead = false;
-
         //text overlay
         Text feed;
         Text levelTitle;
         Text escape;
         Text countdown;
         Text gameover;
+        //Text newHS;
         int countdownNum;
         Font font;
         Player *m_Player;
@@ -67,5 +66,6 @@ class Engine
         void BoarderDetection();
         Vector2f spaces;
         void DrawEnemies();
+        void GenerateText();
         void reset();
 };

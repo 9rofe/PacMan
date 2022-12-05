@@ -1,5 +1,4 @@
 #include "Engine.h"
-#include <ctime>
 
 void Engine::Draw()
 {   
@@ -26,9 +25,8 @@ void Engine::Draw()
     //m_Window.draw();
     if (dead)
     {
-        cout << "GAMEOVER" << endl;
         m_Window.clear();
-        m_Window.draw(gameover);
+        m_Window.draw(gameover);          
     }
     
     m_Window.display();
