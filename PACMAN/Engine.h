@@ -24,6 +24,7 @@ class Engine
         void Run();
     private:
         Direction playerDirection;
+        Direction prev_Direction;
         RenderWindow m_Window;
         Vector2f resolution;
         View m_Scoreboard;

@@ -12,6 +12,7 @@ Engine::Engine()
     m_Player = new Player(coord);
     //m_Player->SetSpeed(300.0);
     playerDirection = Direction::LEFT;
+    prev_Direction = playerDirection;
     font.loadFromFile("PACMAN/fonts/CrackMan.TTF");
     if (!font.loadFromFile("PACMAN/fonts/CrackMan.TTF"))
     {/*error*/}
