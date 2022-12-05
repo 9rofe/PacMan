@@ -30,11 +30,16 @@ class Engine
         Vector2f resolution;
         string m_Scoreboard;
         int m_Lives;
+        bool levelUp = false;
+        bool dead = false;
 
         //text overlay
         Text feed;
         Text levelTitle;
         Text escape;
+        Text countdown;
+        Text gameover;
+        int countdownNum;
         Font font;
         Player *m_Player;
         vector<Enemy> m_Enemies;
@@ -61,5 +66,6 @@ class Engine
         bool ItemCollision(Rect<float> playerRect);
         void BoarderDetection();
         Vector2f spaces;
+        void DrawEnemies();
         void reset();
 };

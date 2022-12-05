@@ -60,7 +60,6 @@ void Engine::WallCollision()
 				playerDirection = prev_Direction;
 			else
 				playerDirection = Direction::NONE;
-
 		}
 		else if (collidesWalls && playerDirection == Direction::RIGHT) {
 			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x - 10.0f, m_Player->GetLocation().y));
@@ -69,7 +68,6 @@ void Engine::WallCollision()
 				playerDirection = prev_Direction;
 			else
 				playerDirection = Direction::NONE;
-
 		}
 		else if (collidesWalls && playerDirection == Direction::UP) {
 			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y + 10.0f));
@@ -78,7 +76,6 @@ void Engine::WallCollision()
 				playerDirection = prev_Direction;
 			else
 				playerDirection = Direction::NONE;
-
 		}
 		else if (collidesWalls && playerDirection == Direction::DOWN) {
 			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y - 10.0f));
@@ -87,7 +84,6 @@ void Engine::WallCollision()
 				playerDirection = prev_Direction;
 			else
 				playerDirection = Direction::NONE;
-
 		}
 	}
 }

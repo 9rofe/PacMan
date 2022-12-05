@@ -8,9 +8,21 @@ vector<Rect<float>> Engine::GenerateWalls()
 	srand(time(0));
 	Vector2f positionTracker = { spaces.x , 0.0 };
 	Vector2f wallSize;
+	int prev_wall = 0;
 	for (int i = 1; i <= 4; i++)
 	{
 		int numWalls = rand() % 3 + 1;
+		bool done = false;
+		while (!done)
+		{
+			if (numWalls != prev_wall)
+			{
+				done = true;
+				prev_wall = numWalls;
+			}
+			else
+				numWalls = rand() % 3 + 1;
+		}			
 		//cout << "numWalls: " << numWalls << endl;
 		wallSize = { (resolution.x - (5 * spaces.x)) / 4, (resolution.y - ((numWalls + 1) * spaces.y)) / numWalls };
 		//positionTracker = { spaces.x * i, 0.0 };

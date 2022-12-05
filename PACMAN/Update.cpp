@@ -32,10 +32,13 @@ void Engine::Update()
 		playerDirection = Direction::NONE;
 		Clock e_Clock;
 		Time e_Dt = e_Clock.restart();
+		//countdown = 2
 		while (e_Dt.asSeconds() <= 2.0f){
 			e_Dt = e_Clock.getElapsedTime();
 			this->Draw();
 			clock.restart();
+			//countdown draw
+			//countdown --
 			//cout << "TIMER ENEMY COLISION: " << e_Dt.asSeconds() << endl;
 		}
 		e_Clock.restart();

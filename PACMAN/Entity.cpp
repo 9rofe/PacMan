@@ -89,7 +89,7 @@ void Enemy::Move(Direction direction,Time dt)
 }
 void Enemy::SetSpeed(double speed)
 {
-    m_speed += speed;
+    m_speed = speed;
 }
 Direction Enemy::getDirection() const
 {

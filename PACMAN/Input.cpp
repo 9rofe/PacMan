@@ -13,6 +13,15 @@ void Engine::Input()
 
         if (event.type == sf::Event::KeyPressed)
         {
+            if (Keyboard::isKeyPressed(Keyboard::Space) && dead)
+            {
+                cout << "game restarted" << endl;
+                CheckHighScore(currentScore);
+                dead = false;
+                reset();
+                currentScore = 0;
+                m_level = 1;
+            }
             if (Keyboard::isKeyPressed(Keyboard::Up))
             {
                 prev_Direction = playerDirection;

@@ -11,9 +11,8 @@ bool Engine::EnemyCollision(Rect<float> playerRect)
 			m_Player->SetLocation(Vector2f(resolution.x / 3.3f, resolution.y / 1.1f));
 			playerDirection = Direction::RIGHT;
 			//cout << "ENEMY COLLISION!" << "LIVES: " << m_Player->GetLives() << endl;
-			if (m_Player->GetLives() <= 0) {
+			if (m_Player->GetLives() <= 0)
 				reset();
-			}
 			if (m_Enemies.at(counter).getDirection() == Direction::DOWN) {
 				m_Enemies.at(counter).SetLocation(Vector2f(m_Enemies.at(counter).GetLocation().x, m_Enemies.at(counter).GetLocation().y + 10.0f));
 				m_Enemies.at(counter).SetDirection(Direction::UP);

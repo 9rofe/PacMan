@@ -52,6 +52,27 @@ Engine::Engine()
     escape.setPosition(resolution.x / 1.2f, resolution.y / 1.18f);
     escape.setString("\"esc\" to quit");
 
+    FloatRect textRect4 = countdown.getLocalBounds();
+    countdown.setFont(font);
+    countdown.setCharacterSize(50);
+    countdown.setFillColor(Color::White);
+    countdown.setOutlineColor(Color::Blue);
+    countdown.setOutlineThickness(1.0);
+    countdown.setOrigin(textRect4.left + textRect4.width / 2.0f, textRect4.top + textRect4.height / 2.0f);
+    countdown.setPosition(resolution.x / 2.0f, resolution.y / 2.0f);
+    countdownNum = 2;
+    countdown.setString(to_string(countdownNum));
+
+    FloatRect textRect5 = gameover.getLocalBounds();
+    gameover.setFont(font);
+    gameover.setCharacterSize(50);
+    gameover.setFillColor(Color::White);
+    gameover.setOutlineColor(Color::Blue);
+    gameover.setOutlineThickness(1.0);
+    gameover.setOrigin(textRect5.left + textRect5.width / 2.0f, textRect5.top + textRect5.height / 2.0f);
+    gameover.setPosition(resolution.x / 3.5f, resolution.y / 2.5f);
+    gameover.setString("        !GAME OVER!\npress space to restart\n    press esc to quit");
+
     currentScore = 0;
     m_InputFile.open("PACMAN/scoreboard.txt");
     if (!m_InputFile)
