@@ -33,12 +33,9 @@ void Engine::Update()
 		}
 		m_Enemies.at(counter).Move(m_Enemies.at(counter).getDirection(), dt);
 	}
-
+	
 	m_Player->Move(playerDirection, dt);
 	clock.restart();
-
-	//check for eaten items
-	//update m_dotsMap and m_fruitMap
 	
 	//PLAYER RECT
 	Rect<float> playerRect(m_Player->GetLocation(), { 60.0, 60.0 });
