@@ -45,14 +45,19 @@ void Engine::GenerateText()
     gameover.setPosition(resolution.x / 3.5f, resolution.y / 2.5f);
     gameover.setString("        !GAME OVER!\npress space to restart\n    press esc to quit");
 
-    /*
-    FloatRect textRect6 = newHS.getLocalBounds();
     newHS.setFont(font);
-    newHS.setCharacterSize(30);
+    newHS.setCharacterSize(40);
     newHS.setFillColor(Color::White);
     newHS.setOutlineColor(Color::Red);
     newHS.setOutlineThickness(1.0);
-    newHS.setOrigin(textRect6.left + textRect6.width / 2.0f, textRect6.top + textRect6.height / 2.0f);
+    newHS.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     newHS.setPosition(resolution.x / 10.0f, resolution.y / 10.0f);
-    */
+    
+    endHS.setFont(font);
+    endHS.setCharacterSize(40);
+    endHS.setFillColor(Color::White);
+    endHS.setOutlineColor(Color::Red);
+    endHS.setOutlineThickness(1.0);
+    endHS.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+    endHS.setPosition(resolution.x / 1.45f, resolution.y / 10.0f);
 }

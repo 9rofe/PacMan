@@ -50,5 +50,4 @@ void Engine::Update()
 	feed.setString(m_Scoreboard);
 	levelTitle.setString("Level: " + to_string(m_level));
 	countdown.setString("   GO!");
-
 }

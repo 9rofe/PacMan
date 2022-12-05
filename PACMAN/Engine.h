@@ -37,7 +37,8 @@ class Engine
         Text escape;
         Text countdown;
         Text gameover;
-        //Text newHS;
+        Text newHS;
+        Text endHS;
         int countdownNum;
         Font font;
         Player *m_Player;

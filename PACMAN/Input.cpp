@@ -16,7 +16,6 @@ void Engine::Input()
             if (Keyboard::isKeyPressed(Keyboard::Space) && dead)
             {
                 cout << "game restarted" << endl;
-                CheckHighScore(currentScore);
                 dead = false;
                 reset();
                 currentScore = 0;
@@ -56,7 +55,6 @@ void Engine::Input()
     if (Keyboard::isKeyPressed(Keyboard::Escape))
     {
         cout << "game exited" << endl;
-        CheckHighScore(currentScore);
         m_Window.close();
     }
 }

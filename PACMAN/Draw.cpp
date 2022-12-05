@@ -26,7 +26,11 @@ void Engine::Draw()
     //m_Window.draw();
     if (dead)
     {
+        playerDirection = Direction::NONE;
         m_Window.clear();
+        CheckHighScore(currentScore);
+        m_Window.draw(newHS);
+        m_Window.draw(endHS);
         m_Window.draw(gameover);          
     }
     

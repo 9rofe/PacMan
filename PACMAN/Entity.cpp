@@ -71,7 +71,7 @@ Enemy::Enemy(Vector2f coord) : Entity(coord)
 {
     m_EntityLocation = coord;
     m_speed = 200;
-    m_direction = Direction::DOWN;
+    m_direction = Direction::UP;
 }
 
 void Enemy::Move(Direction direction,Time dt)
