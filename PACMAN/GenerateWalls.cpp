@@ -19,8 +19,6 @@ vector<Rect<float>> Engine::GenerateWalls()
 			Vector2f wallPos = { positionTracker.x, positionTracker.y + spaces.y };
 			Rect<float> wall(wallPos, wallSize);
 			map.push_back(wall);
-			//cout << "wall left: " << wall.left << endl;
-			//cout << "wall top: " << wall.top << endl;
 			positionTracker.y += wallSize.y + spaces.y;
 		}
 		positionTracker.x += wallSize.x + spaces.x;

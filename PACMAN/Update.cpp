@@ -25,8 +25,8 @@ void Engine::Update()
 	//PLAYER RECT
 	Rect<float> playerRect(m_Player->GetLocation(), { 60.0, 60.0 });
 	WallCollision();
-	ItemCollision(playerRect);
-	//timer and enemy collision
+	//ItemCollision(playerRect);
+	//timer and enemy collision check
 	if (EnemyCollision(playerRect) == true || ItemCollision(playerRect) == true) // not working on ItemCollision() reset.
 	{
 		playerDirection = Direction::NONE;
