@@ -25,7 +25,7 @@ class Engine
     private:
         Direction playerDirection;
         Direction prev_Direction;
-        //Direction wantedDirection;
+        Direction wantedDirection;
         RenderWindow m_Window;
         Vector2f resolution;
         string m_Scoreboard;
