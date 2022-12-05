@@ -42,6 +42,7 @@ class Engine
 	    void Input();
 	    void Update();
 	    void Draw();
+        int m_level;
         list<Rect<float>> m_fruitMap;
         list<Rect<float>> m_dotsMap;
         vector<Rect<float>> m_wallsMap;
@@ -56,7 +57,7 @@ class Engine
         int currentScore;
         void CheckHighScore(int newScore);
         void WallCollision();
-        void EnemyCollision(Rect<float> playerRect);
+        bool EnemyCollision(Rect<float> playerRect);
         void ItemCollision(Rect<float> playerRect);
         void BoarderDetection();
         Vector2f spaces;

@@ -3,6 +3,7 @@
 //generate once each round
 vector<Rect<float>> Engine::GenerateWalls()
 {
+	m_wallsMap.clear();
 	vector<Rect<float>> map;
 	srand(time(0));
 	Vector2f positionTracker = { spaces.x , 0.0 };

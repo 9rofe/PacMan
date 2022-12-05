@@ -1,7 +1,8 @@
 #include "Engine.h"
 
-void Engine::EnemyCollision(Rect<float> playerRect)
+bool Engine::EnemyCollision(Rect<float> playerRect)
 {
+	Clock Clock;
 	for (unsigned int counter = 0; counter < m_Enemies.size(); counter++) {
 		Rect<float> enemyRect(m_Enemies.at(counter).GetLocation(), { 30.0, 30.0 });
 		bool collidesEnemy = enemyRect.intersects(playerRect);
@@ -22,6 +23,7 @@ void Engine::EnemyCollision(Rect<float> playerRect)
 				m_Enemies.at(counter).SetLocation(Vector2f(m_Enemies.at(counter).GetLocation().x, m_Enemies.at(counter).GetLocation().y - 10.0f));
 				m_Enemies.at(counter).SetDirection(Direction::DOWN);
 			}
+			return true;
 		}
 	}
 }

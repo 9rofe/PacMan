@@ -7,7 +7,7 @@ Engine::Engine()
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
     m_Window.create(VideoMode(resolution.x, resolution.y), "PacMan", Style::Fullscreen);
-
+    m_level = 1;
     Vector2f coord = { resolution.x / 2.0f, resolution.y / 1.1f };
     m_Player = new Player(coord);
     //m_Player->SetSpeed(300.0);
