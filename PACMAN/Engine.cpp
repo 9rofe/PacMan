@@ -26,12 +26,12 @@ Engine::Engine()
     }
     FloatRect textRect = feed.getLocalBounds();
     feed.setFont(font);
-    feed.setCharacterSize(20);
+    feed.setCharacterSize(30);
     feed.setFillColor(Color::White);
     feed.setOutlineColor(Color::Blue);
     feed.setOutlineThickness(1.0);
     feed.setOrigin(textRect.left +textRect.width / 2.0f,textRect.top + textRect.height / 2.0f);
-    feed.setPosition(textRect.height / 10.0f, textRect.width / 20.0f);
+    feed.setPosition(textRect.height / 1000.0f, textRect.width / 200.0f);
 
     currentScore = 0;
     m_InputFile.open("PACMAN/scoreboard.txt");
@@ -48,6 +48,7 @@ Engine::Engine()
         cout << "Current High Score: " << m_HighScore << endl;
         m_InputFile.close();
     }
+    feed.setString("TEST");
     //generate walls
     m_wallsMap = GenerateWalls();
     //generate the vectors of items (only generate each once)

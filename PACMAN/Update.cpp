@@ -66,7 +66,7 @@ void Engine::Update()
 	}
 		//enemy collision
 		for (unsigned int counter = 0; counter < m_Enemies.size(); counter++){
-			Rect<float> enemyRect(m_Enemies.at(counter).GetLocation(), {60.0, 60.0});
+			Rect<float> enemyRect(m_Enemies.at(counter).GetLocation(), {30.0, 30.0});
 			bool collidesEnemy = enemyRect.intersects(playerRect);
 			if (collidesEnemy){
 				m_Player->SetLives(-1);
