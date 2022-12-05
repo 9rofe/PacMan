@@ -4,7 +4,6 @@ void Engine::Update()
 {
 	static Clock clock;
 	Time dt = clock.restart();
-	
 
 	for (int counter = 0; counter < 5; counter++){
 		if (m_Enemies.at(counter).GetLocation().y < 1.0f){
@@ -28,13 +27,12 @@ void Engine::Update()
 	WallCollision();
 	ItemCollision(playerRect);
 	//timer and enemy collision
-	if (EnemyCollision(playerRect) == true || ItemCollision(playerRect) == true)
+	if (EnemyCollision(playerRect) == true || ItemCollision(playerRect) == true) // not working on ItemCollision() reset.
 	{
 		playerDirection = Direction::NONE;
 		Clock e_Clock;
 		Time e_Dt = e_Clock.restart();
-		while (e_Dt.asSeconds() <= 2.0f)
-		{
+		while (e_Dt.asSeconds() <= 2.0f){
 			e_Dt = e_Clock.getElapsedTime();
 			this->Draw();
 			clock.restart();

@@ -10,6 +10,7 @@ void Engine::reset()
 	m_dotsMap = GenerateDots();
 	m_fruitMap = GenerateFruit();
 	m_wallsMap = GenerateWalls();
+	//	m_Enemies = need to make separate function for creating enemies.
 	DrawWalls(m_wallsMap);
 	DrawItems(m_dotsMap, m_fruitMap);
 	m_level++;
