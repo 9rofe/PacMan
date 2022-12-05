@@ -36,26 +36,23 @@ void Engine::Update()
 		}
 		m_Enemies.at(counter).Move(m_Enemies.at(counter).getDirection(), dt);
 	}
-
+	
 	m_Player->Move(playerDirection, dt);
 	clock.restart();
-
-	//check for eaten items
-	//update m_dotsMap and m_fruitMap
 	
 	//PLAYER RECT
 	Rect<float> playerRect(m_Player->GetLocation(), { 80.0, 80.0 });
 
+	//check walls
 	for (unsigned int counter = 0; counter < m_wallsMap.size(); counter++)
 	{
-		bool collidesWalls = m_wallsMap.at(counter).intersects(playerRect);
-		if (collidesWalls)
+		if (m_wallsMap.at(counter).intersects(playerRect))
 		{
 			cout << "WALL COLLISION!" << endl;
 		}
-			//delete dot
-			//add dot->getPoints()
 	}
+
+	//eats dots
 	list<Rect<float>>::iterator dotsIter = m_dotsMap.begin();
 	while (dotsIter != m_dotsMap.end()) {
 		if (dotsIter->intersects(playerRect))
@@ -70,6 +67,7 @@ void Engine::Update()
 		}
 	}
 
+	//eats fruit
 	list<Rect<float>>::iterator fruitIter = m_fruitMap.begin();
 	while (fruitIter != m_fruitMap.end()) {
 		if (fruitIter->intersects(playerRect))
