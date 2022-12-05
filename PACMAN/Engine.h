@@ -25,12 +25,16 @@ class Engine
     private:
         Direction playerDirection;
         Direction prev_Direction;
+        //Direction wantedDirection;
         RenderWindow m_Window;
         Vector2f resolution;
-        View m_Scoreboard;
+        string m_Scoreboard;
+        int m_Lives;
 
         //text overlay
         Text feed;
+        Text levelTitle;
+        Text escape;
         Font font;
         Player *m_Player;
         vector<Enemy> m_Enemies;
@@ -51,5 +55,9 @@ class Engine
         int m_HighScore;
         int currentScore;
         void CheckHighScore(int newScore);
-
+        void WallCollision();
+        void EnemyCollision(Rect<float> playerRect);
+        void ItemCollision(Rect<float> playerRect);
+        void BoarderDetection();
+        Vector2f spaces;
 };

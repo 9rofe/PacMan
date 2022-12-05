@@ -45,5 +45,4 @@ void Engine::DrawItems(list<Rect<float>> dots, list<Rect<float>> fruit)
 		fruit_Sprite.setTexture(text);
 		m_Window.draw(fruit_Sprite);
 	}
-
 }

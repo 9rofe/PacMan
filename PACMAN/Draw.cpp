@@ -28,6 +28,8 @@ void Engine::Draw()
     }
     //m_Window.draw();
     m_Window.draw(feed);
+    m_Window.draw(levelTitle);
+    m_Window.draw(escape);
     m_Window.display();
     
 
