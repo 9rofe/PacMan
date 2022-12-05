@@ -47,6 +47,7 @@ void Engine::Input()
     if (Keyboard::isKeyPressed(Keyboard::Escape))
     {
         cout << "game exited" << endl;
+        CheckHighScore(currentScore);
         m_Window.close();
     }
 }
