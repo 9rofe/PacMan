@@ -27,6 +27,10 @@ void Engine::Draw()
         m_Window.draw(new_Enemy);
     }
     //m_Window.draw();
+    if (m_Lives == 0)
+    {
+        cout << "GAMEOVER" << endl;
+    }
     m_Window.draw(feed);
     m_Window.draw(levelTitle);
     m_Window.draw(escape);

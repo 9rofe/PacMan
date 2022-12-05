@@ -7,7 +7,9 @@ void Engine::reset()
 		m_Player->SetLives(3);
 		m_level = 0;
 	}
+	m_dotsMap.clear();
 	m_dotsMap = GenerateDots();
+	m_fruitMap.clear();
 	m_fruitMap = GenerateFruit();
 	m_wallsMap = GenerateWalls();
 	//	m_Enemies = need to make separate function for creating enemies.

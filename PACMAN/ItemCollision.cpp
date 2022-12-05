@@ -4,7 +4,6 @@ bool Engine::ItemCollision(Rect<float> playerRect)
 {
 	list<Rect<float>>::iterator fruitIter = m_fruitMap.begin();
 	list<Rect<float>>::iterator dotsIter = m_dotsMap.begin();
-	cout << "DOTS: " << m_dotsMap.size() << endl;
 	while (dotsIter != m_dotsMap.end()) {
 		if (dotsIter->intersects(playerRect)) {
 			cout << "DOT COLLISION!" << endl;

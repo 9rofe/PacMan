@@ -36,7 +36,7 @@ void Engine::Update()
 			e_Dt = e_Clock.getElapsedTime();
 			this->Draw();
 			clock.restart();
-			cout << "TIMER ENEMY COLISION: " << e_Dt.asSeconds() << endl;
+			//cout << "TIMER ENEMY COLISION: " << e_Dt.asSeconds() << endl;
 		}
 		e_Clock.restart();
 		playerDirection = Direction::RIGHT;

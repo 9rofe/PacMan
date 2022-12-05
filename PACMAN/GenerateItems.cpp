@@ -3,6 +3,7 @@
 //generate once each round
 list<Rect<float>> Engine::GenerateDots()
 { 
+	
 	list<Rect<float>> dotMap;
 	Vector2f dotSize = { resolution.x / 96, resolution.y / 54 };
 	float wallWidth = (resolution.x - (5 * (resolution.x / 16))) / 4;
@@ -32,6 +33,7 @@ list<Rect<float>> Engine::GenerateDots()
 //generate once each round
 list<Rect<float>> Engine::GenerateFruit()
 {
+	
 	list<Rect<float>> fruitMap;
 	Vector2f fruitSize = { resolution.x / 48, resolution.y / 27 };
 	float wallWidth = (resolution.x - (5 * (resolution.x / 16))) / 4;
