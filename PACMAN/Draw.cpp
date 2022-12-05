@@ -6,6 +6,7 @@ void Engine::Draw()
 
     DrawWalls(m_wallsMap);
     DrawItems(m_dotsMap, m_fruitMap);
+    m_Window.draw(countdown);
 
     //Draws "Player"
     Sprite dd_player;
