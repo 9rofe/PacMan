@@ -26,4 +26,5 @@ bool Engine::EnemyCollision(Rect<float> playerRect)
 			return true;
 		}
 	}
+	return false;
 }

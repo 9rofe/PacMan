@@ -28,7 +28,7 @@ void Engine::Update()
 	WallCollision();
 	ItemCollision(playerRect);
 	//timer and enemy collision
-	if (EnemyCollision(playerRect) == true)
+	if (EnemyCollision(playerRect) == true || ItemCollision(playerRect) == true)
 	{
 		playerDirection = Direction::NONE;
 		Clock e_Clock;

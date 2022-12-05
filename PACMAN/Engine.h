@@ -58,7 +58,8 @@ class Engine
         void CheckHighScore(int newScore);
         void WallCollision();
         bool EnemyCollision(Rect<float> playerRect);
-        void ItemCollision(Rect<float> playerRect);
+        bool ItemCollision(Rect<float> playerRect);
         void BoarderDetection();
         Vector2f spaces;
+        void reset();
 };
