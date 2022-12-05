@@ -18,47 +18,30 @@ void Engine::DrawWalls(vector<Rect<float>> map)
 //draw in loop
 void Engine::DrawItems(list<Rect<float>> dots, list<Rect<float>> fruit)
 {
+	Texture text;
+	text.loadFromFile("PACMAN/Textures/BitcoinLogo.png");
 	list<Rect<float>>::iterator iter;
 	for (iter = dots.begin(); iter != dots.end(); ++iter) {
 		Vector2f dotSize = { iter->width, iter->height };
 		Vector2f dotPos = { iter->left, iter->top };
-		RectangleShape dot(dotSize);
-		dot.setPosition(dotPos);
-		dot.setFillColor(Color::White);
-		dot.setOutlineColor(Color::Blue);
-		m_Window.draw(dot);
-	}/*
-	for (int i = 0; i < dots.size(); i++)
-	{
-		Vector2f dotSize = { dots.at(i).width, dots.at(i)->height };
-		Vector2f dotPos = { dots.at(i).left, dots.at(i)->top };
-		RectangleShape dot(dotSize);
-		dot.setPosition(dotPos);
-		dot.setFillColor(Color::White);
-		dot.setOutlineColor(Color::Blue);
-		m_Window.draw(dot);
+		Sprite dot_Sprite;
+		dot_Sprite.setTexture(text);
+		dot_Sprite.setPosition(dotPos);
+		/*dot.setFillColor(Color::White);
+		dot.setOutlineColor(Color::Blue);*/
+		m_Window.draw(dot_Sprite);
 	}
-	*/
-	//cout << "dots drawn" << endl;
+	text.loadFromFile("PACMAN/Textures/TeslaLogo2.png");
 	for (iter = fruit.begin(); iter != fruit.end(); ++iter) {
-		Vector2f fruitSize = { iter->width, iter->height };
+		//Vector2f fruitSize = { iter->width, iter->height };
 		Vector2f fruitPos = { iter->left, iter->top };
-		RectangleShape fruit(fruitSize);
-		fruit.setPosition(fruitPos);
-		fruit.setFillColor(Color::White);
-		fruit.setOutlineColor(Color::Blue);
-		m_Window.draw(fruit);
+		Sprite fruit_Sprite;
+		fruit_Sprite.setScale(1.0,1.0);
+		fruit_Sprite.setPosition(fruitPos);
+		//fruit.setFillColor(Color::White);
+		//fruit.setOutlineColor(Color::Blue);
+		fruit_Sprite.setTexture(text);
+		m_Window.draw(fruit_Sprite);
 	}
-	/*
-	for (int i = 0; i < fruit.size(); i++)
-	{
-		Vector2f fruitSize = { fruit.at(i)->width, fruit.at(i)->height };
-		Vector2f fruitPos = { fruit.at(i)->left, fruit.at(i)->top };
-		RectangleShape fruit(fruitSize);
-		fruit.setPosition(fruitPos);
-		fruit.setFillColor(Color::Yellow);
-		m_Window.draw(fruit);
-	}
-	*/
-	//cout << "fruit drawn" << endl;
+
 }
