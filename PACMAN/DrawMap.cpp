@@ -3,7 +3,7 @@
 //draw in loop
 void Engine::DrawWalls(vector<Rect<float>> map)
 {
-	for (int i = 0; i < map.size(); i++)
+	for (unsigned int i = 0; i < map.size(); i++)
 	{
 		Vector2f mapSize = { map.at(i).width, map.at(i).height};
 		Vector2f mapPos = { map.at(i).left, map.at(i).top };
