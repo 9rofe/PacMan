@@ -7,19 +7,23 @@ void Engine::Update()
 	//player border detection.
 	if (m_Player->GetLocation().y < 1.0f)
 	{
-		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y + 1.0f));
+		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y + 10.0f));
+		playerDirection = Direction::NONE;
 	}
 	else if (m_Player->GetLocation().y >= 1000.0f)
 	{
-		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y - 1.0f));
+		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y - 10.0f));
+		playerDirection = Direction::NONE;
 	}
 	else if (m_Player->GetLocation().x < 1.0f)
 	{
-		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x + 1.0f, m_Player->GetLocation().y));
+		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x + 10.0f, m_Player->GetLocation().y));
+		playerDirection = Direction::NONE;
 	}
 	else if (m_Player->GetLocation().x >= 1840.0f)
 	{
-		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x - 1.0f, m_Player->GetLocation().y));
+		m_Player->SetLocation(Vector2f(m_Player->GetLocation().x - 10.0f, m_Player->GetLocation().y));
+		playerDirection = Direction::NONE;
 	}
 
 	for (int counter = 0; counter < 5; counter++)

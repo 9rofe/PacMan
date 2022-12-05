@@ -15,6 +15,7 @@ using namespace std;
 
 #include "Item.h"
 #include "Entity.h"
+#include <list>
 
 class Engine
 {
