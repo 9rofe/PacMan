@@ -13,7 +13,7 @@ void Engine::Draw()
     Texture text;
     text.loadFromFile("PACMAN/Textures/ElonMusk.png");
     dd_player.setTexture(text);
-    dd_player.setScale(1.0, 1.0);
+    dd_player.setScale(.8, 1.0);
     
     dd_player.setPosition(m_Player->GetLocation());
     m_Window.draw(dd_player);
