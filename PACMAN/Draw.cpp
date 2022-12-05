@@ -17,12 +17,12 @@ void Engine::Draw()
     
     dd_player.setPosition(m_Player->GetLocation());
     m_Window.draw(dd_player);
-    text.loadFromFile("PACMAN/Textures/BluePacmanGhost.png");
+    text.loadFromFile("PACMAN/Textures/Twitter.png");
     for (int counter = 0; counter < 5; counter++)
     {
         Sprite new_Enemy;
         new_Enemy.setTexture(text);
-        new_Enemy.setScale(2.0, 2.0);
+        new_Enemy.setScale(1.0, 1.0);
         new_Enemy.setPosition(m_Enemies.at(counter).GetLocation());
         m_Window.draw(new_Enemy);
     }

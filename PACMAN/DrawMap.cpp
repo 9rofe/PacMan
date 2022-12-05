@@ -1,15 +1,17 @@
 #include "Engine.h"
+#include <ctime>
 
 //draw in loop
 void Engine::DrawWalls(vector<Rect<float>> map)
 {
+
 	for (unsigned int i = 0; i < map.size(); i++)
 	{
 		Vector2f mapSize = { map.at(i).width, map.at(i).height};
 		Vector2f mapPos = { map.at(i).left, map.at(i).top };
 		RectangleShape wall(mapSize);
 		wall.setPosition(mapPos);
-		wall.setFillColor(Color::White);
+		wall.setFillColor(Color::Red);
 		m_Window.draw(wall);
 	}
 	//cout << "walls drawn" << endl;
