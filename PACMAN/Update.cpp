@@ -53,10 +53,31 @@ void Engine::Update()
 	for (unsigned int counter = 0; counter < m_wallsMap.size(); counter++)
 	{
 		bool collidesWalls = m_wallsMap.at(counter).intersects(playerRect);
-		if (collidesWalls)
+		if (collidesWalls && playerDirection == Direction::LEFT)
 		{
-			cout << "WALL COLLISION!" << endl;
+			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x - 10.0f, m_Player->GetLocation().y));
+			playerDirection = Direction::NONE;
+			cout << "WALL COLLISION! LEFT" << endl;
 		}
+		else if (collidesWalls && playerDirection == Direction::RIGHT)
+		{
+			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x + 10.0f, m_Player->GetLocation().y));
+			cout << "WALL COLLISION! RIGHT" << endl;
+			playerDirection = Direction::NONE;
+		}
+		else if (collidesWalls && playerDirection == Direction::UP)
+		{
+			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y + 10.0f));
+			cout << "WALL COLLISION! UP" << endl;
+			playerDirection = Direction::NONE;
+		}
+		else if (collidesWalls && playerDirection == Direction::DOWN)
+		{
+			m_Player->SetLocation(Vector2f(m_Player->GetLocation().x, m_Player->GetLocation().y - 10.0f));
+			cout << "WALL COLLISION! DOWN" << endl;
+			playerDirection = Direction::NONE;
+		}
+
 			//delete dot
 			//add dot->getPoints()
 	}
