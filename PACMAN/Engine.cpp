@@ -19,8 +19,7 @@ Engine::Engine()
     m_level = 1;
     //creates enemies
     float spacer = (resolution.x - (5 * (resolution.x / 16))) / 4;
-    for (int counter = 0; counter < 5; counter++)
-    {
+    for (int counter = 0; counter < 5; counter++){
         Vector2f enemyPos = { (((resolution.x / 16) / 3) - (resolution.x / 192)) + ((resolution.x / 16 + spacer) * counter), (resolution.y / (2 * (counter+1))) - (resolution.y / 108)};
         m_Enemies.push_back(Enemy(enemyPos));
         m_Enemies.at(counter).SetSpeed(300.0);
@@ -28,12 +27,10 @@ Engine::Engine()
     //score tracker
     currentScore = 0;
     m_InputFile.open("PACMAN/scoreboard.txt");
-    if (!m_InputFile)
-    {
+    if (!m_InputFile){
         cout << "m_InputFile failed to open" << endl;
     }
-    else
-    {
+    else{
         string ss;
         m_InputFile >> ss;
         m_HighScore = stoi(ss);
