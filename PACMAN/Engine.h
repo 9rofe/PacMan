@@ -13,7 +13,6 @@
 using namespace sf;
 using namespace std;
 
-#include "Item.h"
 #include "Entity.h"
 
 class Engine
