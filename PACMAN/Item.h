@@ -17,16 +17,20 @@ using namespace std;
 class Item
 {
 public:
-    Item();
     Item(Vector2f location, Vector2f size);
     Vector2f GetLocation() const;
     void SetLocation(Vector2f location);
     Vector2f GetSize() const;
     void SetSize(Vector2f location);
     virtual int getPoints() = 0;
-    Rect<float> GetRect() const;
+    Rect<float>* GetRect() const;
+
+    ~Item();
+    Item(const Item &origItem);
+    Item& operator=(const Item& objToCopy);
+    
 protected:
-    Rect<float> item;
+    Rect<float>* item;
 };
 
 class Dot : public Item
