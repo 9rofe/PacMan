@@ -4,10 +4,7 @@
 Item::Item(Vector2f location, Vector2f size)
 {
     cout << "constr called" <<  endl;
-    item->left = location.x;
-    item->top = location.y;
-    item->width = size.x;
-    item->height = size.y;
+    item = new Rect<float>(location, size);
 }
 
 Vector2f Item::GetLocation() const
